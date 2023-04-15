@@ -13,7 +13,7 @@ export default function ChatForm() {
         />
         <button
           type="submit"
-          className="bg-blue-500 text-white font-semibold p-2 rounded inline-flex items-center"
+          className="bg-teal-900 text-white font-semibold p-2 rounded inline-flex items-center"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
