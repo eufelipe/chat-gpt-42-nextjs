@@ -6,14 +6,14 @@ export const metadata = {
     "GPT42: não é só sobre a resposta, mas a pergunta certa! Vem bater um papo.",
 };
 
-export default function RootLayout({
-  children,
-}: {
+type LayoutProps = {
   children: React.ReactNode;
-}) {
+};
+
+export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="bg-gray-600 text-gray-50 min-h-screen">{children}</body>
     </html>
   );
 }
