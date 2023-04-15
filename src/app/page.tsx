@@ -5,7 +5,7 @@ export default function Home() {
     <div className="h-screen flex">
       <Sidebar />
       <div className="flex flex-col w-full">
-        <div className="flex-1 overflow-y-auto p-4">
+        <div className="flex-1 overflow-y-auto">
           <Messages />
         </div>
 
