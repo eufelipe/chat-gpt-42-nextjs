@@ -1,7 +1,10 @@
 "use client";
 
-import { IChatOptions, IMessage } from "@/models";
 import { createContext, useContext, useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+
+import { IChatOptions, IMessage } from "@/models";
+import { generateResponse } from "@/services";
 
 const DATA: IMessage[] = [
   {
@@ -20,7 +23,7 @@ const DATA: IMessage[] = [
 
 interface ChatContextData {
   messages: IMessage[];
-  addMessage: (message: IMessage) => void;
+  addMessage: (message: string) => void;
   options: IChatOptions;
   updateOptions: (newOptions: Partial<IChatOptions>) => void;
 }
@@ -39,8 +42,37 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
     output: "Português",
   });
 
-  const addMessage = (message: IMessage) => {
-    setMessages((prevMessages) => [...prevMessages, message]);
+  const addMessage = async (message: string) => {
+    try {
+      const instruction: IMessage = {
+        id: uuidv4(),
+        text: message,
+        isUser: true,
+        createdAt: new Date(),
+      };
+
+      setMessages((prevMessages) => [...prevMessages, instruction]);
+
+      const response = await generateResponse({
+        message,
+        output: options.output,
+        tone: options.tone,
+        writingStyle: options.writingStyle,
+      });
+
+      const text = String(response[0].text);
+
+      const responseMessage: IMessage = {
+        id: uuidv4(),
+        text,
+        isUser: false,
+        createdAt: new Date(),
+      };
+
+      setMessages((prevMessages) => [...prevMessages, responseMessage]);
+    } catch (error) {
+      console.error("Error generating response:", error);
+    }
   };
 
   const updateOptions = (newOptions: Partial<IChatOptions>) => {

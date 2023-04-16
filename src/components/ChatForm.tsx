@@ -1,10 +1,17 @@
+import { useChat } from "@/contexts/ChatContext";
 import ChatOptions from "./ChatOptions";
 
 import { useForm } from "react-hook-form";
 
 export default function ChatForm() {
   const { register, handleSubmit, watch } = useForm();
-  const onSubmit = (data: any) => console.log(data);
+  const { addMessage } = useChat();
+
+  const onSubmit = ({ message }: any) => {
+    console.log(message);
+
+    addMessage(message);
+  };
 
   console.log(watch("message"));
 
