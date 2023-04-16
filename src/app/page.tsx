@@ -1,28 +1,17 @@
-import { ChatForm, Messages, Sidebar } from "@/components";
-import { IMessage } from "@/models";
+"use client";
 
-const DATA: IMessage[] = [
-  {
-    id: "1",
-    text: "Preciso de informações sobre o universo.",
-    isUser: true,
-    createdAt: new Date(),
-  },
-  {
-    id: "2",
-    text: "O universo é uma vasta e complexa rede de matéria, energia, galáxias, estrelas, planetas, buracos negros e muito mais.",
-    isUser: false,
-    createdAt: new Date(),
-  },
-];
+import { ChatForm, Messages, Sidebar } from "@/components";
+import { useChat } from "@/contexts/ChatContext";
 
 export default function Home() {
+  const { messages } = useChat();
+
   return (
     <div className="h-screen flex">
       <Sidebar />
       <div className="flex flex-col w-full">
         <div className="flex-1 overflow-y-auto">
-          <Messages data={DATA} />
+          <Messages data={messages} />
         </div>
 
         <div className="bg-gray-700 h-48">
