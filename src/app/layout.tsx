@@ -1,5 +1,7 @@
 import "./globals.css";
 
+import { ChatProvider } from "@/contexts/ChatContext";
+
 export const metadata = {
   title: "Chat GPT 42",
   description:
@@ -13,7 +15,9 @@ type LayoutProps = {
 export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
-      <body className="bg-gray-600 text-gray-50 min-h-screen">{children}</body>
+      <body className="bg-gray-600 text-gray-50 min-h-screen">
+        <ChatProvider>{children}</ChatProvider>
+      </body>
     </html>
   );
 }
