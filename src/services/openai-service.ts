@@ -1,3 +1,5 @@
+"use server";
+
 import {
   Configuration,
   CreateCompletionResponseChoicesInner,
@@ -14,11 +16,10 @@ const configuration = new Configuration({
   apiKey: OPENAI_API_KEY,
 });
 
-export const instance = new OpenAIApi(configuration);
-
 export const completion = async (prompt: string) => {
   const max_tokens = OPENAI_MAX_TOKENS - prompt.length;
 
+  const instance = new OpenAIApi(configuration);
   const completion = await instance.createCompletion({
     model: OPENAI_ENGINE,
     max_tokens,

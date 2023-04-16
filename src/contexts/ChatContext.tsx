@@ -1,25 +1,10 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import { IChatOptions, IMessage } from "@/models";
 import { generateResponse } from "@/services";
-
-const DATA: IMessage[] = [
-  {
-    id: "1",
-    text: "Preciso de informações sobre o universo.",
-    isUser: true,
-    createdAt: new Date(),
-  },
-  {
-    id: "2",
-    text: "O universo é uma vasta e complexa rede de matéria, energia, galáxias, estrelas, planetas, buracos negros e muito mais.",
-    isUser: false,
-    createdAt: new Date(),
-  },
-];
 
 interface ChatContextData {
   messages: IMessage[];
@@ -37,9 +22,9 @@ export function useChat(): ChatContextData {
 export function ChatProvider({ children }: { children: React.ReactNode }) {
   const [messages, setMessages] = useState<IMessage[]>([]);
   const [options, setSettings] = useState<IChatOptions>({
-    writingStyle: "Default",
-    tone: "Default",
-    output: "Português",
+    writingStyle: "poetic writing style,",
+    tone: "\n\nPlease write in emotional tone,",
+    output: "Portuguese language.",
   });
 
   const addMessage = async (message: string) => {
@@ -51,7 +36,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
         createdAt: new Date(),
       };
 
-      setMessages((prevMessages) => [...prevMessages, instruction]);
+      setMessages((prevMessages: any) => [...prevMessages, instruction]);
 
       const response = await generateResponse({
         message,
@@ -69,19 +54,17 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
         createdAt: new Date(),
       };
 
-      setMessages((prevMessages) => [...prevMessages, responseMessage]);
+      setMessages((prevMessages: any) => [...prevMessages, responseMessage]);
+
+      console.log("response", text);
     } catch (error) {
       console.error("Error generating response:", error);
     }
   };
 
   const updateOptions = (newOptions: Partial<IChatOptions>) => {
-    setSettings((prevSettings) => ({ ...prevSettings, ...newOptions }));
+    setSettings((prevSettings: any) => ({ ...prevSettings, ...newOptions }));
   };
-
-  useEffect(() => {
-    setMessages(DATA);
-  }, []);
 
   return (
     <ChatContext.Provider
