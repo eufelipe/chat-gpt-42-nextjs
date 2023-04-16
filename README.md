@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+<p>
+  <img width="192" height="192" alt="42" src="https://res.cloudinary.com/eufelipe/image/upload/v1681657961/chat-gpt-42/android-chrome-192x192_ikxsas.png">
+</p>
+<h1>
+👋 <strong>CHAT GPT 42</strong>!
+</h1>
+<h2>The answer to life, the universe, and everything else 👊</h2>
 
-## Getting Started
+ [🇧🇷 Versão em Português](/README.pt-br.md)
+ 
+</div>
 
-First, run the development server:
+<p>&nbsp;</p>
+ 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+| 🚧 🚧 🚧 🚧 UNDER CONSTRUCTION 👨‍💻💻  🚧 🚧 🚧 🚧
+ 
+--- 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Welcome to **CHAT GPT 42**, a project developed not only to satisfy curiosity but also for those who seek a more accessible alternative to Chat GPT Plus. 😱
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+After all, Chat GPT Plus costs 20$ Bidens 🤡 🤡 🤡, we were born beautiful, not rich, and our goal is to save while learning!
 
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.ts`.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Motivation
 
-To learn more about Next.js, take a look at the following resources:
+This project arose from the desire to integrate directly with OpenAI, bypassing the barrier of Chat GPT Plus, and creating our own version, economically more viable 💸 💸 💸 🚀
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Here, in addition to the search for savings, the project also serves as a testing ground for the beta 13.3 version of NextJS, exploring its possibilities and features that challenge the laws of space and time. ⏱️
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Technologies used
 
-## Deploy on Vercel
+- [NextJS 13.3.0](https://beta.nextjs.org/) 🆕 
+- [Tailwind CSS 🌈](https://tailwindcss.com/)
+- [OpenAI API 🧠](https://openai.com/)
+- [Socket.IO ⚡️](https://socket.io/)(coming soon, for real-time implementation)
+- [pnpm](https://pnpm.io/pt/) (we even save on disk space 🥲)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## How to use
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Clone the repository.
+2. Install dependencies using `pnpm i`.
+3. Configure environment variables (`OPENAI_API_KEY`) in `.env.local` (an OpenAI API key is required).
+4. Run the project with `pnpm dev`.
+5. Access `http://localhost:3000` and start interacting with CHAT GPT 42!
+
+## Inspiration
+
+CHAT GPT 42 is inspired by ["The Hitchhiker's Guide to the Galaxy"](https://pt.wikipedia.org/wiki/The_Hitchhiker%27s_Guide_to_the_Galaxy), and if you know the work, you already know that "42" is the answer to life, the universe, and everything else. So, here you will find not just a GPT chat, but an intergalactic experience! 🎉
+
+Enjoy the journey, and don't forget: Bring your towel and Don't panic! 🚀
+
+
+## Contributions
+Contributions are very welcome! 🎉 Feel free to open an [Issue](https://github.com/eufelipe/chat-gpt-42-nextjs/issues) or a Pull Request on the project.🚀
+
+<p>&nbsp;</p>
+
+
+---
+
+Made with ♥ by **Felipe Rosas** 👋: [Get in touch!](https://www.linkedin.com/in/eufelipe/)
+
+By the way, guess who suggested this readme?... You're welcome 🥰
