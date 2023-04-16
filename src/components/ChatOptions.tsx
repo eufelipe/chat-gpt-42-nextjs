@@ -1,4 +1,8 @@
+import { useForm } from "react-hook-form";
+
 export default function ChatOptions() {
+  const { register } = useForm();
+
   return (
     <div className="flex justify-between">
       <div className="flex items-center space-x-6">
@@ -8,6 +12,7 @@ export default function ChatOptions() {
           </label>
           <br />
           <select
+            {...register("output")}
             id="output"
             className="w-max-40 border border-gray-500 text-white bg-gray-700 rounded p-2 focus:outline-none focus:border-blue-300"
           >
@@ -21,6 +26,7 @@ export default function ChatOptions() {
           </label>
           <br />
           <select
+            {...register("tone")}
             id="tone"
             className="w-max-40 border border-gray-500 text-white bg-gray-700 rounded p-2 focus:outline-none focus:border-blue-300"
           >
@@ -38,6 +44,7 @@ export default function ChatOptions() {
           </label>
           <br />
           <select
+            {...register("writingStyle")}
             id="writingStyle"
             className="w-max-40 border border-gray-500 text-white bg-gray-700 rounded p-2 focus:outline-none focus:border-blue-300"
           >

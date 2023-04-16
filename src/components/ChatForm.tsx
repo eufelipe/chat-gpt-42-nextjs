@@ -1,12 +1,23 @@
 import ChatOptions from "./ChatOptions";
 
+import { useForm } from "react-hook-form";
+
 export default function ChatForm() {
+  const { register, handleSubmit, watch } = useForm();
+  const onSubmit = (data: any) => console.log(data);
+
+  console.log(watch("message"));
+
   return (
-    <form className="space-y-4 bg-gray-800 p-6 max-w-3xl mt-4 mx-auto rounded">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="space-y-4 bg-gray-800 p-6 max-w-3xl mt-4 mx-auto rounded"
+    >
       <ChatOptions />
 
       <div className="flex space-x-4">
         <input
+          {...register("message")}
           type="text"
           className="flex-grow border border-gray-500 text-white bg-gray-700 rounded p-2 focus:outline-none focus:border-blue-300"
           placeholder="Digite sua mensagem..."
