@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import { ChatProvider } from "@/contexts/ChatContext";
+import Provider from "./Providers";
 
 export const metadata = {
   title: "Chat GPT 42",
@@ -12,11 +13,13 @@ type LayoutProps = {
   children: React.ReactNode;
 };
 
-export default function RootLayout({ children }: LayoutProps) {
+export default async function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
       <body className="bg-gray-600 text-gray-50 min-h-screen">
-        <ChatProvider>{children}</ChatProvider>
+        <Provider>
+          <ChatProvider>{children}</ChatProvider>
+        </Provider>
       </body>
     </html>
   );
