@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Cachalote() {
   return (
-    <div className="relative w-full h-full">
+    <div className="absolute z-10  top-0 left-0 w-full h-full">
       <motion.div
         className="absolute top-0 left-10 -translate-x-1/2"
         animate={{ y: "100vh" }}
