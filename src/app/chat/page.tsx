@@ -19,6 +19,7 @@ export default async function Chat() {
     if (!status || !router) return;
 
     if (status !== "authenticated") {
+      console.log("Not authenticated, redirecting to signin page");
       router.push("/signin");
     }
   }, [router, status]);

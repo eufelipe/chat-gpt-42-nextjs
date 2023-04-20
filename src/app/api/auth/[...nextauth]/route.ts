@@ -14,6 +14,9 @@ export const authOptions: NextAuthOptions = {
   theme: {
     colorScheme: "dark",
   },
+  pages: {
+    signIn: "/signin",
+  },
   callbacks: {
     async signIn({ user }) {
       let isAllowedToSignIn = true;

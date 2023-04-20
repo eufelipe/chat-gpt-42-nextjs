@@ -20,7 +20,7 @@ export default function Home() {
   }, [router, status]);
 
   return (
-    <div className="h-screen w-screen">
+    <div className="h-screen w-screen overflow-hidden">
       <Cloud />
 
       <div className="flex justify-center items-center h-screen">
@@ -28,7 +28,7 @@ export default function Home() {
         <Petunia />
       </div>
 
-      <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center">
+      <div className="absolute z-10 top-0 left-0 w-full h-full flex flex-col justify-center items-center">
         <Image
           src="/icon.png"
           alt="Picture of the author"
